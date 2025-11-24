@@ -11,9 +11,9 @@ public class WeatherSubscriber implements Observer {
 
     @Override
     public void update() {
-        WeatherData weatherData = weatherService.getWeatherData();
-        System.out.println(subsciberName + " Temperature: " + weatherData.getTemperature());
-        System.out.println(subsciberName + " Humidity: " + weatherData.getHumidity());
-        System.out.println(subsciberName + " Pressure: " + weatherData.getPressure());
+        var weatherData = weatherService.getWeatherData();
+        System.out.println(subsciberName + " Temperature: " + weatherData.temperature());
+        System.out.println(subsciberName + " Humidity: " + weatherData.humidity());
+        System.out.println(subsciberName + " Pressure: " + weatherData.pressure());
     }
 }

@@ -11,8 +11,8 @@ public class WeatherService implements Subject {
     private Random random;
 
     public WeatherService() {
-        observers = new ArrayList<Observer>();     
-        weatherData = new WeatherData();
+        observers = new ArrayList<>();     
+        weatherData = new WeatherData(0, 0, 0);
         random = new Random();
     }
 
@@ -38,9 +38,11 @@ public class WeatherService implements Subject {
     }
 
     public void updateWeather() {
-        weatherData.setTemperature(random.nextInt(100));
-        weatherData.setHumidity(random.nextInt(100));
-        weatherData.setPressure(random.nextInt(100));
+        weatherData = new WeatherData(
+            random.nextInt(100),
+            random.nextInt(100),
+            random.nextInt(100)
+        );
         notifyObservers();
     }
 }
