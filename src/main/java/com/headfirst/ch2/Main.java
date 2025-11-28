@@ -2,9 +2,9 @@ package com.headfirst.ch2;
 
 public class Main {
     public static void main(String[] args) {
-        WeatherService weatherService = new WeatherService();
-        WeatherSubscriber weatherSubscriber = new WeatherSubscriber("WeatherSubscriber", weatherService);
-        WeatherSubscriber weatherSubscriber2 = new WeatherSubscriber("WeatherSubscriber2", weatherService);
+        var weatherService = new WeatherService();
+        var weatherSubscriber = new WeatherSubscriber("WeatherSubscriber", weatherService);
+        var weatherSubscriber2 = new WeatherSubscriber("WeatherSubscriber2", weatherService);
         
         weatherService.registerObserver(weatherSubscriber);
         weatherService.registerObserver(weatherSubscriber2);
