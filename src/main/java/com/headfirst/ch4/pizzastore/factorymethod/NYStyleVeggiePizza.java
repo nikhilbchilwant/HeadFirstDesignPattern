@@ -1,6 +1,7 @@
 package com.headfirst.ch4.pizzastore.factorymethod;
 
 import com.headfirst.ch4.pizzastore.model.Pizza;
+import com.headfirst.ch4.pizzastore.ingredients.*;
 
 /**
  * New York style veggie pizza.
@@ -11,8 +12,8 @@ public class NYStyleVeggiePizza extends Pizza {
     public NYStyleVeggiePizza() {
         // TODO: Set NY-style veggie attributes
         name = "NY Style Veggie Pizza";
-        dough = "Thin Crust Dough";
-        sauce = "Marinara Sauce";
+        dough = new ThinCrustDough();
+        sauce = new MarinaraSauce();
         toppings.add("Grated Reggiano Cheese");
         toppings.add("Garlic");
         toppings.add("Onions");

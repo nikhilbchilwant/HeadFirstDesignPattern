@@ -1,6 +1,7 @@
 package com.headfirst.ch4.pizzastore.factorymethod;
 
 import com.headfirst.ch4.pizzastore.model.Pizza;
+import com.headfirst.ch4.pizzastore.ingredients.*;
 
 /**
  * New York style cheese pizza.
@@ -18,8 +19,8 @@ public class NYStyleCheesePizza extends Pizza {
         // sauce = "Marinara Sauce";
         // Add toppings: "Grated Reggiano Cheese"
         name = "NY Style Sauce and Cheese Pizza";
-        dough = "Thin Crust Dough";
-        sauce = "Marinara Sauce";
+        dough = new ThinCrustDough();
+        sauce = new MarinaraSauce();
         toppings.add("Grated Reggiano Cheese");            
     }
 }

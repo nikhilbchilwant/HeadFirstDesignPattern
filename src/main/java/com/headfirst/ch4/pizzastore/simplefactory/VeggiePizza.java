@@ -1,6 +1,7 @@
 package com.headfirst.ch4.pizzastore.simplefactory;
 
 import com.headfirst.ch4.pizzastore.model.Pizza;
+import com.headfirst.ch4.pizzastore.ingredients.*;
 
 /**
  * Concrete implementation of Veggie Pizza.
@@ -10,8 +11,8 @@ public class VeggiePizza extends Pizza {
     // TODO: Implement constructor
     public VeggiePizza() {
         name = "Veggie Pizza";
-        dough = "Crust";
-        sauce = "Marinara sauce";
+        dough = new ThinCrustDough();
+        sauce = new MarinaraSauce();
         toppings.add("Shredded mozzarella");
         toppings.add("Grated parmesan");
         toppings.add("Diced onion");

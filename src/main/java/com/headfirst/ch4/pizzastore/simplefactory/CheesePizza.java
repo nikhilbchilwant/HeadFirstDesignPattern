@@ -1,6 +1,7 @@
 package com.headfirst.ch4.pizzastore.simplefactory;
 
 import com.headfirst.ch4.pizzastore.model.Pizza;
+import com.headfirst.ch4.pizzastore.ingredients.*;
 
 /**
  * Concrete implementation of Cheese Pizza.
@@ -10,8 +11,8 @@ public class CheesePizza extends Pizza {
     // TODO: Implement constructor
     public CheesePizza() {
         name = "Cheese Pizza";
-        dough = "Regular Crust";
-        sauce = "Marinara Pizza Sauce";
+        dough = new ThinCrustDough();
+        sauce = new MarinaraSauce();
         toppings.add("Fresh Mozzarella");
         toppings.add("Parmesan");
     }

@@ -1,6 +1,7 @@
 package com.headfirst.ch4.pizzastore.simplefactory;
 
 import com.headfirst.ch4.pizzastore.model.Pizza;
+import com.headfirst.ch4.pizzastore.ingredients.*;
 
 /**
  * Concrete implementation of Clam Pizza.
@@ -10,8 +11,8 @@ public class ClamPizza extends Pizza {
     // TODO: Implement constructor
     public ClamPizza() {
         name = "Clam Pizza";
-        dough = "Thin Crust Dough";
-        sauce = "White Garlic Sauce";
+        dough = new ThinCrustDough();
+        sauce = new MarinaraSauce();
         toppings.add("Clams");
         toppings.add("Grated Parmesan Cheese");
     }

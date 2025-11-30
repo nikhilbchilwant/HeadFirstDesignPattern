@@ -1,6 +1,7 @@
 package com.headfirst.ch4.pizzastore.factorymethod;
 
 import com.headfirst.ch4.pizzastore.model.Pizza;
+import com.headfirst.ch4.pizzastore.ingredients.*;
 
 /**
  * Chicago style deep-dish cheese pizza.
@@ -19,8 +20,8 @@ public class ChicagoStyleCheesePizza extends Pizza {
         // sauce = "Plum Tomato Sauce";
         // Add toppings: "Shredded Mozzarella Cheese"
         name = "Chicago Style Deep Dish Cheese Pizza";
-        dough = "Extra Thick Crust Dough";
-        sauce = "Plum Tomato Sauce";
+        dough = new ThickCrustDough();
+        sauce = new PlumTomatoSauce();
         toppings.add("Shredded Mozzarella Cheese");
     }
     

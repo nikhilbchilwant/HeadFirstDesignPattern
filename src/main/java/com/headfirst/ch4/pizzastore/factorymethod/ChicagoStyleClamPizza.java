@@ -1,6 +1,7 @@
 package com.headfirst.ch4.pizzastore.factorymethod;
 
 import com.headfirst.ch4.pizzastore.model.Pizza;
+import com.headfirst.ch4.pizzastore.ingredients.*;
 
 /**
  * Chicago style clam pizza.
@@ -13,8 +14,8 @@ public class ChicagoStyleClamPizza extends Pizza {
         // TODO: Set Chicago-style clam attributes
         // Hint: Chicago uses "Frozen Clams" not fresh!
         name = "Chicago Style Clam Pizza";
-        dough = "Extra Thick Crust Dough";
-        sauce = "Plum Tomato Sauce";
+        dough = new ThickCrustDough();
+        sauce = new PlumTomatoSauce();
         toppings.add("Shredded Mozzarella Cheese");
         toppings.add("Frozen Clams");
     }
