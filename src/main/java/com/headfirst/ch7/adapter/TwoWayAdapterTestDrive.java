@@ -1,5 +1,12 @@
 package com.headfirst.ch7.adapter;
 
+import com.headfirst.ch7.adapter.oneway.Duck;
+import com.headfirst.ch7.adapter.oneway.DuckAdapter;
+import com.headfirst.ch7.adapter.oneway.MallardDuck;
+import com.headfirst.ch7.adapter.oneway.Turkey;
+import com.headfirst.ch7.adapter.oneway.TurkeyAdapter;
+import com.headfirst.ch7.adapter.oneway.WildTurkey;
+
 /**
  * Test drive for TWO-WAY adapters.
  * Shows both TurkeyAdapter (Turkey→Duck) and DuckAdapter (Duck→Turkey).
