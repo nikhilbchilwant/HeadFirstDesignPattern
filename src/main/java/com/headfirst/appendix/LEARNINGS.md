@@ -19,7 +19,13 @@ This module explores the additional patterns referenced in the Appendix of Head 
 
 ### 3. Chain of Responsibility
 **Scenario**: Processing incoming emails through a series of handlers (Spam -> Fan -> Complaint).
-- **Files**: `Handler`, `SpamHandler`, `FanHandler`, `ComplaintHandler`, `Email`.
+- **Files**: `Handler`, `SpamHandler`, `FanHandler`, `ClientTest`.
+- **Key Learning**: Decouples the sender of a request from its receiver. Multiple objects get a chance to handle the request.
+- **Modern Alternative**:
+    - **Functional Loop/Stream**: Instead of a linked list of objects, define a `Stream<Function<Request, Boolean>>`.
+    - Use `stream.filter(h -> h.apply(req)).findFirst()` to find the handler that processes it.
+    - **Benefits**: No need for an abstract base class or explicit `successor` management. Handlers can be simple Lambdas.
+    - **See**: `FunctionalHandlerTest.java`.
 
 ### 4. Flyweight (TODO)
 **Scenario**: efficiently rendering a generic forest of trees.
