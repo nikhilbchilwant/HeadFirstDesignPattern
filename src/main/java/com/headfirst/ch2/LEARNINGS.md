@@ -247,6 +247,34 @@ publisher.subscribe(subscriber);
 publisher.submit(new WeatherData(72, 65, 30));
 ```
 
+### Modern Standard Library Approach (JavaBeans)
+**What**: Usage of `PropertyChangeSupport` and `PropertyChangeListener`.
+
+**Why**: 
+Java has a built-in mechanism for "Property Change" events, which is effectively the Observer pattern. It handles the listener list management for you.
+
+**Example**:
+```java
+// Subject
+PropertyChangeSupport support = new PropertyChangeSupport(this);
+public void setTemp(float temp) {
+    support.firePropertyChange("temp", oldTemp, temp);
+}
+
+// Observer
+public void propertyChange(PropertyChangeEvent evt) {
+    System.out.println("New value: " + evt.getNewValue());
+}
+```
+
+**Benefits**:
+- Standard Java API (no external deps).
+- Handles thread-safety of listener list.
+- Supports filtering by property name ("only listen to temp changes").
+
+**See**: `com.headfirst.ch2.modern.ModernObserverTest`
+
+
 ## Design Considerations
 
 ### When to Use Observer Pattern
