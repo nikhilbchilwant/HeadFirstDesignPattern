@@ -112,6 +112,33 @@ var mallard = new MallardDuck();
 - Can't add new implementations without modifying the interface
 - May conflict with Open/Closed Principle in some cases
 
+### 5. Functional Interfaces & Lambdas (Modern Strategy Pattern)
+**What**: Replacing concrete Strategy classes with **Lambdas** or **Method References**.
+
+**Why**: 
+In modern Java, if an interface has only one abstract method (a "Functional Interface"), you don't need to create a separate class implementation for it. You can just pass a lambda.
+
+**Example**:
+Instead of:
+```java
+public class FlyWithRocket implements FlyBehavior {
+    public void fly() { System.out.println("Rocket!"); }
+}
+duck.setFlyBehavior(new FlyWithRocket());
+```
+
+You can do:
+```java
+duck.setFlyBehavior(() -> System.out.println("Rocket!"));
+```
+
+**Benefits**:
+- Drastically reduces boilerplate (fewer small classes).
+- Keeps ad-hoc behaviors close to where they are used.
+- More readable for simple behaviors.
+
+**See**: `FunctionalDuckSimulator.java`
+
 ## Running the Code
 ```bash
 mvn clean compile
